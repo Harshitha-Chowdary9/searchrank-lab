@@ -268,7 +268,7 @@ def main():
         fig, ax = plt.subplots(figsize=(7, 4.5))
         for name, per_k in retrieval_out.items():
             xs = [int(k.split("@")[1]) for k in per_k]
-            ys = [per_k[f"recall@{k}"] for k in per_k]
+            ys = [per_k[k] for k in per_k]
             order = np.argsort(xs)
             ax.plot(np.array(xs)[order], np.array(ys)[order], marker="o", label=name)
         ax.set_xlabel("k (rank cutoff)")

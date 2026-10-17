@@ -1,0 +1,213 @@
+{
+  "dataset": "WANDS (Wayfair ANnotation Dataset, ECIR 2022)",
+  "split": {
+    "train_queries": 288,
+    "val_queries": 96,
+    "test_queries": 96,
+    "seed": 42
+  },
+  "evaluation_note": "Reranking of the judged candidate set per query; unjudged documents count as grade 0. Retrieval Recall@k is measured separately over the full 42,994-product corpus.",
+  "retrieval": {
+    "bm25": {
+      "recall@1": 0.0065,
+      "recall@5": 0.0303,
+      "recall@10": 0.0568,
+      "recall@20": 0.1068,
+      "recall@50": 0.2093,
+      "recall@100": 0.3262
+    },
+    "dense": {
+      "recall@1": 0.0073,
+      "recall@5": 0.0334,
+      "recall@10": 0.0625,
+      "recall@20": 0.1162,
+      "recall@50": 0.2248,
+      "recall@100": 0.3417
+    },
+    "hybrid": {
+      "recall@1": 0.0075,
+      "recall@5": 0.0325,
+      "recall@10": 0.061,
+      "recall@20": 0.1188,
+      "recall@50": 0.2401,
+      "recall@100": 0.3709
+    }
+  },
+  "ranking": {
+    "BM25 (baseline)": {
+      "ndcg@5": {
+        "mean": 0.7561,
+        "ci95": [
+          0.6973,
+          0.8123
+        ],
+        "n_queries": 96
+      },
+      "ndcg@10": {
+        "mean": 0.7633,
+        "ci95": [
+          0.7094,
+          0.8154
+        ],
+        "n_queries": 96
+      },
+      "map": {
+        "mean": 0.8746,
+        "ci95": [
+          0.8342,
+          0.9138
+        ],
+        "n_queries": 95
+      },
+      "mrr": {
+        "mean": 0.9587,
+        "ci95": [
+          0.9234,
+          0.9895
+        ],
+        "n_queries": 95
+      }
+    },
+    "LogReg (pointwise)": {
+      "ndcg@5": {
+        "mean": 0.7305,
+        "ci95": [
+          0.6752,
+          0.7867
+        ],
+        "n_queries": 96
+      },
+      "ndcg@10": {
+        "mean": 0.7408,
+        "ci95": [
+          0.6907,
+          0.7909
+        ],
+        "n_queries": 96
+      },
+      "map": {
+        "mean": 0.8795,
+        "ci95": [
+          0.8398,
+          0.9168
+        ],
+        "n_queries": 95
+      },
+      "mrr": {
+        "mean": 0.9607,
+        "ci95": [
+          0.9306,
+          0.9895
+        ],
+        "n_queries": 95
+      }
+    },
+    "LambdaMART (LightGBM)": {
+      "ndcg@5": {
+        "mean": 0.7628,
+        "ci95": [
+          0.706,
+          0.8168
+        ],
+        "n_queries": 96
+      },
+      "ndcg@10": {
+        "mean": 0.7657,
+        "ci95": [
+          0.7161,
+          0.8166
+        ],
+        "n_queries": 96
+      },
+      "map": {
+        "mean": 0.8879,
+        "ci95": [
+          0.8563,
+          0.92
+        ],
+        "n_queries": 95
+      },
+      "mrr": {
+        "mean": 0.9647,
+        "ci95": [
+          0.9321,
+          0.9916
+        ],
+        "n_queries": 95
+      }
+    },
+    "RankNet (PyTorch MLP)": {
+      "ndcg@5": {
+        "mean": 0.7463,
+        "ci95": [
+          0.6879,
+          0.7994
+        ],
+        "n_queries": 96
+      },
+      "ndcg@10": {
+        "mean": 0.754,
+        "ci95": [
+          0.7019,
+          0.8027
+        ],
+        "n_queries": 96
+      },
+      "map": {
+        "mean": 0.8766,
+        "ci95": [
+          0.8397,
+          0.9125
+        ],
+        "n_queries": 95
+      },
+      "mrr": {
+        "mean": 0.96,
+        "ci95": [
+          0.9249,
+          0.9895
+        ],
+        "n_queries": 95
+      }
+    }
+  },
+  "paired_bootstrap_vs_bm25_ndcg10": {
+    "LogReg (pointwise)": {
+      "mean_diff": -0.0225,
+      "ci95": [
+        -0.0457,
+        -0.0016
+      ],
+      "significant": true
+    },
+    "LambdaMART (LightGBM)": {
+      "mean_diff": 0.0024,
+      "ci95": [
+        -0.0236,
+        0.0287
+      ],
+      "significant": false
+    },
+    "RankNet (PyTorch MLP)": {
+      "mean_diff": -0.0093,
+      "ci95": [
+        -0.0281,
+        0.009
+      ],
+      "significant": false
+    }
+  },
+  "feature_importance_gain": {
+    "tfidf_cosine": 3311.7,
+    "name_unigram_overlap": 1094.5,
+    "desc_unigram_coverage": 812.6,
+    "bm25_score": 621.8,
+    "name_len_tokens": 357.5,
+    "name_bigram_overlap": 200.4,
+    "query_len_tokens": 153.0,
+    "exact_phrase_in_name": 65.7,
+    "log_rating_count": 59.4,
+    "log_review_count": 29.1,
+    "average_rating": 12.4
+  }
+}

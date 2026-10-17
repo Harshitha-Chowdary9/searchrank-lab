@@ -1,0 +1,61 @@
+{
+  "note": "Predictions are bundled mock assistant outputs, not live LLM calls. The harness (metrics, judge, agreement) is the deliverable.",
+  "models": {
+    "mock_assistant_v1": {
+      "exact_match": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "token_f1": {
+        "mean": 0.7008,
+        "ci95": [
+          0.5904,
+          0.7954
+        ]
+      },
+      "rouge_l": {
+        "mean": 0.6351,
+        "ci95": [
+          0.4969,
+          0.7765
+        ]
+      },
+      "judge_agreement": {
+        "percent_agreement": 0.75,
+        "cohens_kappa": 0.0
+      },
+      "mean_judge_grade": 1.75
+    },
+    "mock_assistant_v1_noisy": {
+      "exact_match": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "token_f1": {
+        "mean": 0.5163,
+        "ci95": [
+          0.2899,
+          0.7308
+        ]
+      },
+      "rouge_l": {
+        "mean": 0.5007,
+        "ci95": [
+          0.2825,
+          0.7094
+        ]
+      },
+      "judge_agreement": {
+        "percent_agreement": 0.625,
+        "cohens_kappa": 0.4146
+      },
+      "mean_judge_grade": 0.875
+    }
+  }
+}

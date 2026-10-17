@@ -1,0 +1,19 @@
+{
+  "feature_names": [
+    "bm25_score",
+    "tfidf_cosine",
+    "name_unigram_overlap",
+    "name_bigram_overlap",
+    "exact_phrase_in_name",
+    "desc_unigram_coverage",
+    "query_len_tokens",
+    "name_len_tokens",
+    "log_rating_count",
+    "average_rating",
+    "log_review_count"
+  ],
+  "bm25_k1": 1.5,
+  "bm25_b": 0.75,
+  "model": "LightGBM LambdaMART",
+  "best_iteration": 7
+}
