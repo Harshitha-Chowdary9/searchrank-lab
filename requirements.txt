@@ -1,0 +1,10 @@
+numpy
+scikit-learn
+lightgbm
+torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers
+matplotlib
+fastapi
+uvicorn[standard]
+httpx
+pytest

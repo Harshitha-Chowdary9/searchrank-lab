@@ -1,0 +1,5 @@
+numpy
+scikit-learn
+lightgbm
+fastapi
+uvicorn[standard]
